@@ -2,6 +2,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 import 'app/core/styles/style.dart';
+import 'app/data/services/setting_service.dart';
 import 'app/routes/app_pages.dart';
 
 class RootApp extends StatelessWidget {
@@ -30,10 +31,11 @@ class RootApp extends StatelessWidget {
             routingCallback: (_) {
               WidgetsBinding.instance.focusManager.primaryFocus?.unfocus();
             },
+            onInit: () {
+              Get.put(SettingService());
+            },
             builder: (BuildContext context, Widget? child) {
               final MediaQueryData data = MediaQuery.of(context);
-              // final textScaleFactor =
-              //     data.textScaleFactor > 1.4 ? 1.4 : data.textScaleFactor;
               return MediaQuery(
                 data: data.copyWith(textScaleFactor: 1.1),
                 child: child!,

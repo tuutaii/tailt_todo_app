@@ -72,7 +72,7 @@ class RegisterView extends GetView<RegisterController> {
                 SizedBox(height: 40.h),
                 BottomButtonAuthen(
                   titleForm: 'Register',
-                  onPressed: () {},
+                  onPressed: controller.submitForm,
                   onPressedWithGoogle: () {},
                   onPressedWithApple: () {},
                 ),

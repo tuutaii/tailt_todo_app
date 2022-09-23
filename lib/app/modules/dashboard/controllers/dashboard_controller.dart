@@ -17,7 +17,6 @@ class DashboardController extends GetxController {
   final currentIndex = initTab.index.obs;
   final bottoms = <BottomNavigator>[];
   final pageController = PageController(initialPage: initTab.index);
-  int currentKey = 0;
   @override
   void onInit() {
     bottoms
@@ -29,7 +28,13 @@ class DashboardController extends GetxController {
   }
 
   Future<void> onChangeTab(int index) async {
-    currentKey = index;
     pageController.jumpToPage(index);
+    currentIndex(index);
+  }
+
+  @override
+  void onClose() {
+    pageController.dispose();
+    super.onClose();
   }
 }

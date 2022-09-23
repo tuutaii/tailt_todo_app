@@ -10,6 +10,10 @@ abstract class Routes {
   static const login = _Paths.login;
   static const register = _Paths.register;
   static const dashboard = _Paths.dashboard;
+  static const index = _Paths.index;
+  static const calendar = _Paths.calendar;
+  static const foucse = _Paths.foucse;
+  static const profile = _Paths.profile;
 }
 
 abstract class _Paths {
@@ -21,4 +25,8 @@ abstract class _Paths {
   static const login = '/login';
   static const register = '/register';
   static const dashboard = '/dashboard';
+  static const index = '/index';
+  static const calendar = '/calendar';
+  static const foucse = '/focuse';
+  static const profile = '/profile';
 }

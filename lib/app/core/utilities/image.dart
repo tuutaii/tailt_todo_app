@@ -8,6 +8,8 @@ class AppImage {
   static const String welcome1 = 'assets/images/welcome1.png';
   static const String welcome2 = 'assets/images/welcome2.png';
   static const String welcome3 = 'assets/images/welcome3.png';
+  static const String indexImage = 'assets/images/index_screen_image.png';
+  static const String userAvt = 'assets/images/user.png';
   //icon
   static const String apple = 'assets/images/appleIcon.png';
   static const String google = 'assets/images/googleIcon.png';
@@ -15,4 +17,5 @@ class AppImage {
   static const String calendar = 'assets/icons/calendar.svg';
   static const String clock = 'assets/icons/clock.svg';
   static const String user = 'assets/icons/user.svg';
+  static const String sort = 'assets/icons/sort.svg';
 }

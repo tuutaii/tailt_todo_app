@@ -1,8 +1,13 @@
 import 'package:flutter_svg/svg.dart';
 
 import 'package:get/get.dart';
+import 'package:todo_app/app/modules/calendar/views/calendar_view.dart';
+import 'package:todo_app/app/modules/focuse/views/focuse_view.dart';
+import 'package:todo_app/app/modules/index/views/index_view.dart';
+import 'package:todo_app/app/modules/profile/views/profile_view.dart';
 
 import '../../../core/styles/style.dart';
+import '../../../widget/common/keep_alive_wrapper.dart';
 import '../controllers/dashboard_controller.dart';
 
 class DashboardView extends GetView<DashboardController> {
@@ -10,14 +15,23 @@ class DashboardView extends GetView<DashboardController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('DashboardView'),
-        centerTitle: true,
-      ),
       body: PageView(
-        controller: PageController(initialPage: 0),
+        controller: controller.pageController,
         physics: const NeverScrollableScrollPhysics(),
-        children: [],
+        children: const [
+          KeepAliveWrapper(
+            child: IndexView(),
+          ),
+          KeepAliveWrapper(
+            child: CalendarView(),
+          ),
+          KeepAliveWrapper(
+            child: FocuseView(),
+          ),
+          KeepAliveWrapper(
+            child: ProfileView(),
+          ),
+        ],
       ),
       bottomNavigationBar: const _BottomNavigationBar(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,

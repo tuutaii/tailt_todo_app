@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
 import 'package:todo_app/app/core/utilities/validator/validator.dart';
 
@@ -61,7 +62,11 @@ class LoginView extends GetView<LoginController> {
                   onPressed: controller.submitForm,
                   onPressedWithGoogle: () =>
                       Get.offAndToNamed(Routes.dashboard),
-                  onPressedWithApple: () {},
+                  onPressedWithApple: () {
+                    FirebaseFirestore.instance.collection('testing').add({
+                      'timeStamp': Timestamp.fromDate(DateTime.now()),
+                    });
+                  },
                 ),
               ],
             ),

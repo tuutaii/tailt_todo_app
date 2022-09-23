@@ -1,11 +1,15 @@
 import 'package:get/get.dart';
 
+import '../modules/calendar/bindings/calendar_binding.dart';
 import '../modules/dashboard/bindings/dashboard_binding.dart';
 import '../modules/dashboard/views/dashboard_view.dart';
+import '../modules/focuse/bindings/focuse_binding.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
+import '../modules/index/bindings/index_binding.dart';
 import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
+import '../modules/profile/bindings/profile_binding.dart';
 import '../modules/register/bindings/register_binding.dart';
 import '../modules/register/views/register_view.dart';
 import '../modules/splash/bindings/splash_binding.dart';
@@ -20,7 +24,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const initial = Routes.dashboard;
+  static const initial = Routes.splash;
 
   static final routes = [
     GetPage(
@@ -54,9 +58,14 @@ class AppPages {
       binding: RegisterBinding(),
     ),
     GetPage(
-      name: _Paths.dashboard,
-      page: () => const DashboardView(),
-      binding: DashboardBinding(),
-    ),
+        name: _Paths.dashboard,
+        page: () => const DashboardView(),
+        binding: DashboardBinding(),
+        bindings: [
+          IndexBinding(),
+          CalendarBinding(),
+          FocuseBinding(),
+          ProfileBinding(),
+        ]),
   ];
 }
