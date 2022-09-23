@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 import 'package:todo_app/app/core/mixin/form_mixin.dart';
 import 'package:todo_app/app/core/styles/style.dart';
 
-import '../../../data/services/firebase_authen/authController.dart';
+import '../../../data/services/firebase_authen/auth_controller.dart';
 
 class LoginController extends GetxController with FormMixin {
   AuthService get _auth => Get.find();
