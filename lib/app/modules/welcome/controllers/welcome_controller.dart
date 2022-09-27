@@ -24,7 +24,7 @@ class WelcomeController extends GetxController {
     _curentIndex(index);
     pageTextController.animateToPage(
       index,
-      duration: const Duration(milliseconds: 300),
+      duration: const Duration(milliseconds: 150),
       curve: Curves.ease,
     );
   }
@@ -32,7 +32,7 @@ class WelcomeController extends GetxController {
   void onSkip() {
     pageImageController.animateToPage(
       2,
-      duration: const Duration(milliseconds: 300),
+      duration: const Duration(milliseconds: 150),
       curve: Curves.ease,
     );
   }
@@ -42,7 +42,7 @@ class WelcomeController extends GetxController {
       _curentIndex(curentIndex + 1);
       pageImageController.animateToPage(
         curentIndex,
-        duration: const Duration(milliseconds: 300),
+        duration: const Duration(milliseconds: 150),
         curve: Curves.ease,
       );
     } else {
@@ -55,7 +55,7 @@ class WelcomeController extends GetxController {
       _curentIndex(curentIndex - 1);
       pageImageController.animateToPage(
         curentIndex,
-        duration: const Duration(milliseconds: 300),
+        duration: const Duration(milliseconds: 150),
         curve: Curves.ease,
       );
     }

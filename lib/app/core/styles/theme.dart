@@ -15,6 +15,7 @@ class AppTheme {
   static const Color onBackground = Colors.white;
   static const Color surface = Color(0xff121212);
   static const Color error = Color(0xffBE2727);
+  static const Color redText = Color(0xffFF4949);
   static const Color dividerColor = Color(0xff979797);
   static const Color filled = Color(0xff1D1D1D);
 

@@ -35,10 +35,10 @@ class DashboardView extends GetView<DashboardController> {
       ),
       bottomNavigationBar: const _BottomNavigationBar(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: const FloatingActionButton(
+      floatingActionButton: FloatingActionButton(
         elevation: 0,
-        onPressed: null,
-        child: Icon(Icons.add),
+        onPressed: controller.openAddTask,
+        child: const Icon(Icons.add),
       ),
     );
   }
@@ -60,9 +60,7 @@ class _BottomNavigationBar extends GetView<DashboardController> {
           _BottomNavItem(
             index: 1,
           ),
-          Expanded(
-            child: Text(''),
-          ),
+          Spacer(),
           _BottomNavItem(
             index: 2,
           ),

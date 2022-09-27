@@ -18,4 +18,8 @@ class AppImage {
   static const String clock = 'assets/icons/clock.svg';
   static const String user = 'assets/icons/user.svg';
   static const String sort = 'assets/icons/sort.svg';
+  static const String timer = 'assets/icons/timer.svg';
+  static const String tag = 'assets/icons/tag.svg';
+  static const String flag = 'assets/icons/flag.svg';
+  static const String send = 'assets/icons/send.svg';
 }
