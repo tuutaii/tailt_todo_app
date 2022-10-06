@@ -14,6 +14,7 @@ abstract class Routes {
   static const calendar = _Paths.calendar;
   static const foucse = _Paths.foucse;
   static const profile = _Paths.profile;
+  static const taskDetail = _Paths.taskDetail;
 }
 
 abstract class _Paths {
@@ -29,4 +30,5 @@ abstract class _Paths {
   static const calendar = '/calendar';
   static const foucse = '/focuse';
   static const profile = '/profile';
+  static const taskDetail = '/task-detail';
 }

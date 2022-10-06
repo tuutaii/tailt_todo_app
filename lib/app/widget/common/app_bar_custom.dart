@@ -16,7 +16,7 @@ class AppTitleCustom extends StatelessWidget with PreferredSizeWidget {
     return AppBar(
       automaticallyImplyLeading: false,
       title: Text(
-        'Index',
+        title,
         style: context.headline6,
       ),
       centerTitle: true,

@@ -22,4 +22,5 @@ class AppImage {
   static const String tag = 'assets/icons/tag.svg';
   static const String flag = 'assets/icons/flag.svg';
   static const String send = 'assets/icons/send.svg';
+  static const String edit = 'assets/icons/edit.svg';
 }

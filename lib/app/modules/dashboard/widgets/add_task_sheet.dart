@@ -58,19 +58,19 @@ class AddTaskSheet extends GetView<DashboardController> {
               SizedBox(width: 20.w),
               IconButton(
                 splashRadius: 20,
-                onPressed: () {},
+                onPressed: controller.openPickTag,
                 icon: SvgPicture.asset(AppImage.tag),
               ),
               SizedBox(width: 20.w),
               IconButton(
                 splashRadius: 20,
-                onPressed: () {},
+                onPressed: controller.openPickCategory,
                 icon: SvgPicture.asset(AppImage.flag),
               ),
               const Spacer(),
               IconButton(
                 splashRadius: 20,
-                onPressed: () {},
+                onPressed: controller.onSave,
                 icon: SvgPicture.asset(AppImage.send),
               ),
             ],

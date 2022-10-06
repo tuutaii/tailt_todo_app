@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:intl/intl.dart';
 import 'package:todo_app/app/core/styles/style.dart';
 import 'package:todo_app/app/modules/dashboard/controllers/dashboard_controller.dart';
 import 'package:todo_app/app/modules/dashboard/widgets/day_builder.dart';
@@ -40,13 +39,7 @@ class PickDateTime extends GetView<DashboardController> {
                     controller.isChoseTime.value ? 'Save' : 'Chose Time',
                     axisSize: MainAxisSize.max,
                     onPressed: controller.isChoseTime.value
-                        ? () => controller.onSave(
-                              (controller.taskList.length + 1).toString(),
-                              controller.taskTitleCtr.text,
-                              controller.taskDecriptionCtr.text,
-                              controller.dateSelected.toString(),
-                              controller.timeSelected,
-                            )
+                        ? () => Get.back()
                         : controller.onChoseTime,
                   ),
                 ),
@@ -105,7 +98,7 @@ class PickDateTime extends GetView<DashboardController> {
             child: CupertinoDatePicker(
               onDateTimeChanged: (newTime) {
                 controller.onSelectedTime(
-                    '${newTime.hour.toString()} : ${newTime.minute.toString()}');
+                    '${newTime.hour.toString()}:${newTime.minute.toString()}');
               },
               mode: CupertinoDatePickerMode.time,
               initialDateTime: DateTime.now(),

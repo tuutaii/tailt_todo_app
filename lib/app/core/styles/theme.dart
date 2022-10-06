@@ -17,7 +17,17 @@ class AppTheme {
   static const Color error = Color(0xffBE2727);
   static const Color redText = Color(0xffFF4949);
   static const Color dividerColor = Color(0xff979797);
+  static const Color taskCardColor = Color(0xff363636);
   static const Color filled = Color(0xff1D1D1D);
+  //---COlor pick category.
+  static const Color home = Color(0xffFFCC80);
+  static const Color work = Color(0xffFF9680);
+  static const Color muisc = Color(0xffFC80FF);
+  static const Color sport = Color(0xff80FFFF);
+  static const Color social = Color(0xffFF80EB);
+  static const Color movie = Color(0xff80D1FF);
+  static const Color money = Color(0xffCCFF80);
+  static const Color relax = Color(0xff80FFA3);
 
   static ThemeData getCollectionTheme() {
     const colorScheme = ColorScheme.dark(

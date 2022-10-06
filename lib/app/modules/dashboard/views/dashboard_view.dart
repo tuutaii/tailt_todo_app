@@ -38,7 +38,10 @@ class DashboardView extends GetView<DashboardController> {
       floatingActionButton: FloatingActionButton(
         elevation: 0,
         onPressed: controller.openAddTask,
-        child: const Icon(Icons.add),
+        child: Icon(
+          Icons.add,
+          color: context.onBackground,
+        ),
       ),
     );
   }

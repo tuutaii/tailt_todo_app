@@ -16,6 +16,8 @@ import '../modules/splash/bindings/splash_binding.dart';
 import '../modules/splash/views/splash_view.dart';
 import '../modules/start_screen/bindings/start_screen_binding.dart';
 import '../modules/start_screen/views/start_screen_view.dart';
+import '../modules/task_detail/bindings/task_detail_binding.dart';
+import '../modules/task_detail/views/task_detail_view.dart';
 import '../modules/welcome/bindings/welcome_binding.dart';
 import '../modules/welcome/views/welcome_view.dart';
 
@@ -24,7 +26,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const initial = Routes.splash;
+  static const initial = Routes.login;
 
   static final routes = [
     GetPage(
@@ -67,5 +69,10 @@ class AppPages {
           FocuseBinding(),
           ProfileBinding(),
         ]),
+    GetPage(
+      name: _Paths.taskDetail,
+      page: () => const TaskDetailView(),
+      binding: TaskDetailBinding(),
+    ),
   ];
 }
