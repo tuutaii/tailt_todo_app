@@ -18,10 +18,14 @@ class TaskDetailView extends GetView<TaskDetailController> {
       appBar: AppTitleCustom(
         leading: CloseButton(
           onPressed: Get.back,
+          color: context.surface,
         ),
         title: '',
         action: IconButton(
-          icon: const Icon(Icons.refresh),
+          icon: Icon(
+            Icons.refresh,
+            color: context.surface,
+          ),
           onPressed: () {},
           splashRadius: 20,
         ),
@@ -47,14 +51,13 @@ class TaskDetailView extends GetView<TaskDetailController> {
                 ),
                 subtitle: Text(
                   controller.taskModel.decription,
-                  style: context.subtitle1.copyWith(
-                    color: context.onBackground.withOpacity(.5),
-                  ),
+                  style: context.subtitle1,
                 ),
                 trailing: InkWell(
                   child: SvgPicture.asset(
                     AppImage.edit,
                     height: 25.h,
+                    color: context.surface,
                   ),
                   onTap: () {},
                 ),
@@ -140,7 +143,7 @@ class TaskItemDetail extends StatelessWidget {
                   child: Text(
                     itemContent,
                     style: context.caption.copyWith(
-                      color: context.onBackground,
+                      color: context.surface,
                     ),
                   ),
                 ),

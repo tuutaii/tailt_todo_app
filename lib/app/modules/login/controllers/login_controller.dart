@@ -34,10 +34,8 @@ class LoginController extends GetxController with FormMixin {
 
   @override
   Future<void> submitForm() async {
-    isLoading(true);
     super.submitForm();
     _auth.login(userNameCtr.text.trim(), passwordCtr.text.trim());
-    isLoading(false);
   }
 
   void validateId(String errorText) {

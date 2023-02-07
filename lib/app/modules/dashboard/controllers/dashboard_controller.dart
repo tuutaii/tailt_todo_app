@@ -49,10 +49,10 @@ class DashboardController extends GetxController {
   void onInit() {
     getData();
     bottoms
-      ..add(BottomNavigator('Index', AppImage.home))
-      ..add(BottomNavigator('Calendar', AppImage.calendar))
-      ..add(BottomNavigator('Focuse', AppImage.clock))
-      ..add(BottomNavigator('Profile', AppImage.user));
+      ..add(BottomNavigator(LocaleKeys.index, AppImage.home))
+      ..add(BottomNavigator(LocaleKeys.calendar, AppImage.calendar))
+      ..add(BottomNavigator(LocaleKeys.focuse, AppImage.clock))
+      ..add(BottomNavigator(LocaleKeys.profile, AppImage.user));
     super.onInit();
     listTaskSearch.value = taskList;
   }
@@ -132,7 +132,7 @@ class DashboardController extends GetxController {
       final dateFormat = dateSelected.day == DateTime.now().day &&
               dateSelected.month == DateTime.now().month &&
               dateSelected.year == DateTime.now().year
-          ? 'Today At '
+          ? LocaleKeys.today.tr
           : '${DateFormat('dd/MM/yyyy').format(dateSelected)}\n At ';
       await FirebaseFirestore.instance
           .collection('task')

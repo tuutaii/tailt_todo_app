@@ -10,8 +10,17 @@ class AuthService extends GetxService {
 
   bool get isAuth => _isAuth.value;
   User? user;
-  Rxn<User>? _currentUser;
-  User? get currentUser => _currentUser?.value;
+  final _currentUser = Rxn<User>();
+  User? get currentUser => _currentUser.value;
+
+  @override
+  void onInit() {
+    super.onInit();
+    _firebaseAuth.authStateChanges().listen((event) {
+      _isAuth(event != null);
+      _currentUser(event);
+    });
+  }
 
   void login(String email, password) async {
     try {

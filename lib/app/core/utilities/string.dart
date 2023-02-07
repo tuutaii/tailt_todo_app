@@ -7,33 +7,42 @@ class StringUtils {
 
   static const String notoSans = 'NotoSans';
   static const String avenir = 'Avenir';
-
-  // Common
-  static String get error => 'error'.tr;
-  static String get cancel => 'cancel'.tr;
-  static String get ok => 'ok'.tr;
-  static String get close => 'close'.tr;
   static String get emptyId => 'Id is required';
+
   static String get inputIncorrect => 'input_incorrect'.tr;
   static String get emptyPassword => 'Password is required';
-  static String get password => 'password'.tr;
-  static String get singUp => 'sign_up'.tr;
-  static String get name => 'name'.tr;
-  static String get dob => 'dob'.tr;
-  static String get phone => 'phone'.tr;
-  static String get email => 'email'.tr;
-  static String get register => 'register'.tr;
-  static String get registerNote => 'register_note'.tr;
-  static String get pleaseCheckYourNetwork => 'Please check your network';
-  static String get noData => 'no_data'.tr;
-  static String get tokenTimeout => 'token_timeout'.tr;
-  static String get goToLogin => 'go_to_login'.tr;
-  static String get achieved => 'achieved'.tr;
-  static String get dataQueryError => 'data_query_error'.tr;
-  static String get dataChangeError => 'data_change_error'.tr;
-  static String get unknownError => 'unknown_error'.tr;
 
-  static String get logout => 'logout'.tr;
+  //--- Onboarding Screen ---
+  static String get manageTasks => 'manage_tasks'.tr;
+  static String get content1 => 'content_1'.tr;
+  static String get createRoutine => 'create_routine'.tr;
+  static String get content2 => 'content_2'.tr;
+  static String get orgonaizeTasks => 'orgonaize_tasks'.tr;
+  static String get content3 => 'content_3'.tr;
+  static String get skip => 'skip'.tr;
+  static String get back => 'back'.tr;
+  static String get next => 'next'.tr;
+  static String get start => 'start'.tr;
+  static String get welcome => 'welcome'.tr;
+  static String get contentWelcome => 'content_welcome'.tr;
+  static String get loginButton => 'login_button'.tr;
+  static String get createAccount => 'create_account'.tr;
 
-  static String get messageInput => 'message_input'.tr;
+  //--- Login Screen ---
+  static String get loginTitle => 'login_title'.tr;
+  static String get registerTitle => 'register_title'.tr;
+  static String get username => 'user_name'.tr;
+  static String get pass => 'pass'.tr;
+  static String get or => 'or'.tr;
+  static String get confirmPass => 'confirm_pass'.tr;
+  static String get loginWith => 'login_with'.tr;
+  static String get registerWith => 'register_with'.tr;
+  static String get bottomLogin => 'bottom_login'.tr;
+  static String get bottomRegister => 'bottom_register'.tr;
+
+  //---Dashboard---
+  static String get index => 'index';
+  static String get calendar => 'calendar';
+  static String get focuse => 'focuse';
+  static String get profile => 'profile';
 }

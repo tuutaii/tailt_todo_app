@@ -17,7 +17,7 @@ class PickCaregoryDialog extends GetView<DashboardController> {
         children: [
           SizedBox(height: 10.h),
           Text(
-            'Choose Category',
+            LocaleKeys.choseCategory.tr,
             style: context.subtitle1,
           ),
           const Divider(),
@@ -47,7 +47,7 @@ class PickCaregoryDialog extends GetView<DashboardController> {
             children: [
               Expanded(
                 child: AppButton(
-                  'Cancel',
+                  LocaleKeys.cancel.tr,
                   onPressed: Get.back,
                   type: ButtonType.text,
                   axisSize: MainAxisSize.max,
@@ -56,7 +56,7 @@ class PickCaregoryDialog extends GetView<DashboardController> {
               ),
               Expanded(
                 child: AppButton(
-                  'Save',
+                  LocaleKeys.save.tr,
                   axisSize: MainAxisSize.max,
                   onPressed: Get.back,
                 ),

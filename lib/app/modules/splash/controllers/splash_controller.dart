@@ -1,15 +1,29 @@
 import 'package:get/get.dart';
 import 'package:todo_app/app/routes/app_pages.dart';
 
-class SplashController extends GetxController {
+import '../../../core/styles/style.dart';
+
+class SplashController extends GetxController with GetTickerProviderStateMixin {
+  late AnimationController controller;
+  @override
+  void onClose() {
+    controller.dispose();
+    super.onClose();
+  }
+
   @override
   void onInit() {
     super.onInit();
-    _initialize();
-  }
-
-  Future<void> _initialize() async {
-    await .5.delay();
-    Get.offAndToNamed(Routes.welcome);
+    controller = AnimationController(
+      vsync: this,
+      duration: const Duration(
+        milliseconds: 700,
+      ),
+    );
+    controller.addStatusListener((status) {
+      if (status == AnimationStatus.completed) {
+        Get.offAndToNamed(Routes.welcome);
+      }
+    });
   }
 }

@@ -13,9 +13,10 @@ class IndexView extends GetView<DashboardController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppTitleCustom(
-        title: 'Index',
+        title: LocaleKeys.index.tr,
         leading: SvgPicture.asset(
           AppImage.sort,
+          color: context.surface,
         ),
         action: const CircleAvatar(
           radius: 21.0,
@@ -42,26 +43,41 @@ class IndexView extends GetView<DashboardController> {
                         borderRadius: BorderRadius.circular(4.0),
                       ),
                       filled: true,
-                      hintStyle: TextStyle(color: Colors.grey[800]),
-                      hintText: 'Search for your task...',
-                      fillColor: AppTheme.filled,
+                      hintStyle: TextStyle(
+                        color: Colors.grey[800],
+                        fontStyle: FontStyle.italic,
+                      ),
+                      hintText: LocaleKeys.searchTask.tr,
+                      fillColor: context.secondary.withOpacity(.5),
                     ),
                     onChanged: (content) => controller.filterPlayer(content),
                   ),
                 ),
                 Expanded(
-                  child: Obx(
-                    () => ListView.builder(
-                      itemCount: controller.listTaskSearch.value.length,
-                      itemBuilder: (context, index) {
-                        final post = controller.listTaskSearch.value[index];
-                        return TaskItem(
-                          taskItem: post,
-                          onTap: () => {
-                            controller.gotoDetail(index),
-                          },
-                        );
-                      },
+                  child: RefreshIndicator(
+                    onRefresh: controller.getData,
+                    child: Obx(
+                      () => Stack(
+                        children: [
+                          ListView.builder(
+                            itemCount: controller.listTaskSearch.value.length,
+                            itemBuilder: (context, index) {
+                              final post =
+                                  controller.listTaskSearch.value[index];
+                              return TaskItem(
+                                taskItem: post,
+                                onTap: () => {
+                                  controller.gotoDetail(index),
+                                },
+                              );
+                            },
+                          ),
+                          if (controller.isLoading.value)
+                            const Center(
+                              child: CircularProgressIndicator(),
+                            ),
+                        ],
+                      ),
                     ),
                   ),
                 ),

@@ -101,14 +101,14 @@ class _BottomNavItem extends GetView<DashboardController> {
                   item.icon,
                   width: 24.w,
                   height: 24.h,
-                  color: active ? context.primary : context.onBackground,
+                  color: active ? context.primary : context.surface,
                 ),
                 SizedBox(height: 5.h),
                 Text(
-                  item.name,
+                  item.name.tr,
                   textAlign: TextAlign.center,
                   style: context.caption.copyWith(
-                    color: active ? context.primary : context.onBackground,
+                    color: active ? context.primary : context.surface,
                   ),
                 ),
               ],

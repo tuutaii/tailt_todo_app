@@ -19,3 +19,16 @@ extension DateTimeExt on DateTime {
     return (to.difference(from).inHours / 24).round();
   }
 }
+
+extension GetMoney on int {
+  String get priceString {
+    final numberString = toString();
+    final numberDigits = List.from(numberString.split(''));
+    int index = numberDigits.length - 3;
+    while (index > 0) {
+      numberDigits.insert(index, ',');
+      index -= 3;
+    }
+    return numberDigits.join();
+  }
+}

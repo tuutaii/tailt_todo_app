@@ -17,11 +17,18 @@ dependencies:
   http_parser: ^4.0.1
   flutter_svg: ^1.1.5
   table_calendar: ^3.0.7
+  flag: ^6.0.0
   get: 4.6.5
   firebase_core: ^1.22.0
   firebase_analytics: ^9.3.5
   firebase_auth: ^3.9.0
   cloud_firestore: ^3.4.8
+  shared_preferences: ^2.0.15
+  lottie: ^1.2.1
+  mask_text_input_formatter: ^2.4.0
+  flutter_slidable: ^2.0.0
+  flutter_localizations:
+    sdk: flutter
 
   flutter: 
     sdk: flutter
@@ -37,6 +44,7 @@ flutter:
     - assets/images/
     - assets/fonts/
     - assets/icons/
+    - assets/lotties/
   fonts:
     - family: domine_variableFont
       fonts:

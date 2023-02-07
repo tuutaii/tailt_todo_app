@@ -25,14 +25,14 @@ class LoginView extends GetView<LoginController> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Login',
+                  LocaleKeys.loginTitle.tr,
                   style: TextStyle(fontSize: 32.sp),
                 ),
                 SizedBox(height: 53.h),
                 InputCustom(
-                  titleInput: 'Username',
+                  titleInput: LocaleKeys.userName.tr,
                   controller: controller.userNameCtr,
-                  hintText: "Type in your name",
+                  hintText: LocaleKeys.typeName.tr,
                   validator: Validator.validateAll(
                     [
                       IdValidator(
@@ -44,29 +44,32 @@ class LoginView extends GetView<LoginController> {
                 ),
                 SizedBox(height: 25.h),
                 InputCustom(
-                  titleInput: 'Password',
+                  titleInput: LocaleKeys.pass.tr,
                   controller: controller.passwordCtr,
-                  hintText: "Type in your password",
+                  hintText: LocaleKeys.typePass.tr,
                   validator: Validator.validateAll(
                     [
                       IdValidator(
-                        StringUtils.emptyPassword,
+                        StringUtils.emptyPassword.tr,
                         onError: controller.validatePassword,
                       ),
                     ],
                   ),
                 ),
                 SizedBox(height: 60.h),
-                BottomButtonAuthen(
-                  titleForm: 'Login',
-                  onPressed: controller.submitForm,
-                  onPressedWithGoogle: () =>
-                      Get.offAndToNamed(Routes.dashboard),
-                  onPressedWithApple: () {
-                    FirebaseFirestore.instance.collection('testing').add({
-                      'timeStamp': Timestamp.fromDate(DateTime.now()),
-                    });
-                  },
+                Obx(
+                  () => BottomButtonAuthen(
+                    titleForm: LocaleKeys.loginTitle.tr,
+                    isLoading: controller.loading,
+                    onPressed: controller.submitForm,
+                    onPressedWithGoogle: () =>
+                        Get.offAndToNamed(Routes.dashboard),
+                    onPressedWithApple: () {
+                      FirebaseFirestore.instance.collection('testing').add({
+                        'timeStamp': Timestamp.fromDate(DateTime.now()),
+                      });
+                    },
+                  ),
                 ),
               ],
             ),
@@ -74,8 +77,8 @@ class LoginView extends GetView<LoginController> {
         ),
       ),
       bottomNavigationBar: BottomNavigatorForm(
-        content: "Don’t have an account? ",
-        textButton: 'Register',
+        content: LocaleKeys.bottomLogin.tr,
+        textButton: LocaleKeys.registerTitle.tr,
         onTap: () => Get.toNamed(Routes.register),
       ),
     );

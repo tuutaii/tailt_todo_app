@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
+import '../../../../generated/locales.g.dart';
 import '../controllers/focuse_controller.dart';
 
 class FocuseView extends GetView<FocuseController> {
@@ -10,15 +11,10 @@ class FocuseView extends GetView<FocuseController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('FocuseView'),
+        title: Text(LocaleKeys.calendar.tr),
         centerTitle: true,
       ),
-      body: const Center(
-        child: Text(
-          'FocuseView is working',
-          style: TextStyle(fontSize: 20),
-        ),
-      ),
+      body: const Center(),
     );
   }
 }

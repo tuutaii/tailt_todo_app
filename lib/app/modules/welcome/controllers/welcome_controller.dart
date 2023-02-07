@@ -7,12 +7,21 @@ import '../../../data/models/welcome/welcome_model.dart';
 
 class WelcomeController extends GetxController {
   List<WelcomeModel> listWelcomePage = [
-    WelcomeModel(AppImage.welcome1, 'Manage your tasks',
-        'You can easily manage all of your daily tasks in DoMe for free'),
-    WelcomeModel(AppImage.welcome2, 'Create daily routine',
-        'In Uptodo  you can create your personalized routine to stay productive'),
-    WelcomeModel(AppImage.welcome3, 'Orgonaize your tasks',
-        'You can organize your daily tasks by adding your tasks into separate categories'),
+    WelcomeModel(
+      AppImage.welcome1,
+      LocaleKeys.manageTasks,
+      LocaleKeys.content1,
+    ),
+    WelcomeModel(
+      AppImage.welcome2,
+      LocaleKeys.createRoutine,
+      LocaleKeys.content2,
+    ),
+    WelcomeModel(
+      AppImage.welcome3,
+      LocaleKeys.orgonaizeTasks,
+      LocaleKeys.content3,
+    ),
   ];
   final pageImageController = PageController(initialPage: 0);
   final pageTextController = PageController(initialPage: 0);

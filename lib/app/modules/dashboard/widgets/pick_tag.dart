@@ -15,7 +15,7 @@ class PickTagDialog extends GetView<DashboardController> {
         children: [
           SizedBox(height: 10.h),
           Text(
-            'Edit Task Priority',
+            LocaleKeys.editPriority.tr,
             style: context.subtitle1,
           ),
           const Divider(),
@@ -41,7 +41,7 @@ class PickTagDialog extends GetView<DashboardController> {
             children: [
               Expanded(
                 child: AppButton(
-                  'Cancel',
+                  LocaleKeys.cancel.tr,
                   onPressed: Get.back,
                   type: ButtonType.text,
                   axisSize: MainAxisSize.max,
@@ -50,7 +50,7 @@ class PickTagDialog extends GetView<DashboardController> {
               ),
               Expanded(
                 child: AppButton(
-                  'Save',
+                  LocaleKeys.save.tr,
                   axisSize: MainAxisSize.max,
                   onPressed: Get.back,
                 ),

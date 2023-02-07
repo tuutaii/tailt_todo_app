@@ -1,5 +1,5 @@
 import 'package:flutter_svg/svg.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/get.dart';
 import 'package:todo_app/app/core/styles/style.dart';
 import 'package:todo_app/app/core/utilities/image.dart';
 import 'package:todo_app/app/modules/dashboard/controllers/dashboard_controller.dart';
@@ -15,7 +15,7 @@ class AddTaskSheet extends GetView<DashboardController> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Add Task',
+            LocaleKeys.addTask.tr,
             style: context.headline6.copyWith(
               fontWeight: FontWeight.bold,
             ),
@@ -28,9 +28,9 @@ class AddTaskSheet extends GetView<DashboardController> {
                 borderRadius: BorderRadius.circular(4.0),
               ),
               filled: true,
-              hintText: 'Title',
+              hintText: LocaleKeys.taskTitle.tr,
               hintStyle: TextStyle(color: Colors.grey[800]),
-              fillColor: AppTheme.filled,
+              fillColor: context.secondary.withOpacity(.5),
             ),
           ),
           SizedBox(height: 14.h),
@@ -41,9 +41,9 @@ class AddTaskSheet extends GetView<DashboardController> {
                 borderRadius: BorderRadius.circular(4.0),
               ),
               filled: true,
-              hintText: 'Decription',
+              hintText: LocaleKeys.taskDecrip.tr,
               hintStyle: TextStyle(color: Colors.grey[800]),
-              fillColor: AppTheme.filled,
+              fillColor: context.secondary.withOpacity(.5),
             ),
           ),
           SizedBox(height: 20.h),
@@ -53,19 +53,28 @@ class AddTaskSheet extends GetView<DashboardController> {
               IconButton(
                 splashRadius: 20,
                 onPressed: controller.openPickTime,
-                icon: SvgPicture.asset(AppImage.timer),
+                icon: SvgPicture.asset(
+                  AppImage.timer,
+                  color: context.surface,
+                ),
               ),
               SizedBox(width: 20.w),
               IconButton(
                 splashRadius: 20,
                 onPressed: controller.openPickTag,
-                icon: SvgPicture.asset(AppImage.tag),
+                icon: SvgPicture.asset(
+                  AppImage.tag,
+                  color: context.surface,
+                ),
               ),
               SizedBox(width: 20.w),
               IconButton(
                 splashRadius: 20,
                 onPressed: controller.openPickCategory,
-                icon: SvgPicture.asset(AppImage.flag),
+                icon: SvgPicture.asset(
+                  AppImage.flag,
+                  color: context.surface,
+                ),
               ),
               const Spacer(),
               IconButton(

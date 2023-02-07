@@ -20,7 +20,9 @@ class InputCustom extends StatelessWidget {
       children: [
         Text(
           titleInput,
-          style: context.subtitle1,
+          style: context.subtitle1.copyWith(
+            fontWeight: FontWeight.bold,
+          ),
         ),
         Padding(
           padding: EdgeInsets.symmetric(vertical: 8.h),
@@ -31,9 +33,12 @@ class InputCustom extends StatelessWidget {
                 borderRadius: BorderRadius.circular(4.0),
               ),
               filled: true,
-              hintStyle: TextStyle(color: Colors.grey[800]),
+              hintStyle: TextStyle(
+                color: Colors.grey[800],
+                fontStyle: FontStyle.italic,
+              ),
               hintText: hintText,
-              fillColor: AppTheme.filled,
+              fillColor: context.secondary.withOpacity(.5),
             ),
             validator: validator,
           ),

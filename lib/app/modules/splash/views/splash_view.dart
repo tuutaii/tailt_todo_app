@@ -1,6 +1,5 @@
 import 'package:get/get.dart';
-
-import 'package:todo_app/app/core/utilities/image.dart';
+import 'package:lottie/lottie.dart';
 
 import '../../../core/styles/style.dart';
 import '../controllers/splash_controller.dart';
@@ -14,10 +13,18 @@ class SplashView extends GetView<SplashController> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(
-              AppImage.logo,
-              height: 113.h,
-              width: 113.w,
+            Lottie.asset(
+              'assets/lotties/bts_splash.json',
+              width: 400,
+              height: 400,
+              fit: BoxFit.fill,
+              frameRate: FrameRate.max,
+              controller: controller.controller,
+              onLoaded: (composition) {
+                controller.controller
+                  ..duration = composition.duration
+                  ..forward();
+              },
             ),
             Text(
               'UpToDo',

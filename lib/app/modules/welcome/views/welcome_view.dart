@@ -14,7 +14,7 @@ class WelcomeView extends GetView<WelcomeController> {
           child: TextButton(
             onPressed: controller.onSkip,
             child: Text(
-              'SKIP',
+              LocaleKeys.skip.tr,
               style: context.subtitle1.copyWith(
                 color: AppTheme.subtitleColor,
               ),
@@ -64,7 +64,7 @@ class WelcomeView extends GetView<WelcomeController> {
                   return Column(
                     children: [
                       Text(
-                        controller.listWelcomePage[index].title,
+                        controller.listWelcomePage[index].title.tr,
                         style: context.subtitle1.copyWith(
                           fontSize: 22.sp,
                           fontWeight: FontWeight.bold,
@@ -73,7 +73,7 @@ class WelcomeView extends GetView<WelcomeController> {
                       ),
                       SizedBox(height: 42.h),
                       Text(
-                        controller.listWelcomePage[index].discription,
+                        controller.listWelcomePage[index].discription.tr,
                         style: context.captionStyle,
                         textAlign: TextAlign.center,
                       ),
@@ -135,15 +135,15 @@ class _BottomButton extends StatelessWidget {
           TextButton(
             onPressed: canBack ? onBack : null,
             child: Text(
-              'BACK',
+              LocaleKeys.back.tr,
               style: context.subtitle1.copyWith(
-                color: canBack ? AppTheme.onBackground : AppTheme.subtitleColor,
+                color: canBack ? context.surface : AppTheme.subtitleColor,
               ),
             ),
           ),
           isLast
               ? AppButton(
-                  'Get Started',
+                  LocaleKeys.start.tr,
                   onPressed: onNext,
                   borderRadius: 4,
                   fontSize: 16.sp,
@@ -151,7 +151,7 @@ class _BottomButton extends StatelessWidget {
                   textColor: context.onBackground,
                 )
               : AppButton(
-                  'NEXT',
+                  LocaleKeys.next.tr,
                   onPressed: onNext,
                   borderRadius: 4,
                   fontSize: 16.sp,

@@ -13,8 +13,8 @@ class TaskItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 0,
-      color: AppTheme.taskCardColor,
+      elevation: 5,
+      color: context.secondary,
       margin: EdgeInsets.symmetric(
         horizontal: 24.w,
         vertical: 8.h,
@@ -34,7 +34,9 @@ class TaskItem extends StatelessWidget {
           padding: EdgeInsets.only(bottom: 5.h),
           child: Text(
             taskItem.title,
-            style: context.subtitle1,
+            style: context.subtitle1.copyWith(
+              color: context.surface,
+            ),
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
           ),
@@ -44,6 +46,9 @@ class TaskItem extends StatelessWidget {
           children: [
             Text(
               '${taskItem.date}${taskItem.time} ',
+              style: context.caption.copyWith(
+                color: context.surface,
+              ),
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
             ),
@@ -65,7 +70,7 @@ class TaskItem extends StatelessWidget {
                   Text(
                     listCategory[taskItem.category].name,
                     style: context.overline.copyWith(
-                      color: context.onBackground,
+                      color: context.onSurface,
                     ),
                   ),
                 ],
@@ -89,7 +94,7 @@ class TaskItem extends StatelessWidget {
                   Text(
                     taskItem.tagNumber.toString(),
                     style: context.caption.copyWith(
-                      color: context.onBackground,
+                      color: context.surface,
                     ),
                   ),
                 ],

@@ -24,14 +24,14 @@ class RegisterView extends GetView<RegisterController> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Register',
+                  LocaleKeys.registerTitle.tr,
                   style: TextStyle(fontSize: 32.sp),
                 ),
                 SizedBox(height: 53.h),
                 InputCustom(
-                  titleInput: 'Username',
+                  titleInput: LocaleKeys.userName.tr,
                   controller: controller.userNameCtr,
-                  hintText: "Type in your name",
+                  hintText: LocaleKeys.typeName.tr,
                   validator: Validator.validateAll(
                     [
                       IdValidator(
@@ -43,9 +43,9 @@ class RegisterView extends GetView<RegisterController> {
                 ),
                 SizedBox(height: 25.h),
                 InputCustom(
-                  titleInput: 'Password',
+                  titleInput: StringUtils.pass,
                   controller: controller.passwordCtr,
-                  hintText: "Type in your password",
+                  hintText: LocaleKeys.typePass.tr,
                   validator: Validator.validateAll(
                     [
                       IdValidator(
@@ -57,9 +57,9 @@ class RegisterView extends GetView<RegisterController> {
                 ),
                 SizedBox(height: 25.h),
                 InputCustom(
-                  titleInput: 'Confirm Password',
+                  titleInput: LocaleKeys.confirmPass.tr,
                   controller: controller.passwordCtr,
-                  hintText: "Type in your confirm password",
+                  hintText: LocaleKeys.typeConfirmPass.tr,
                   validator: Validator.validateAll(
                     [
                       IdValidator(
@@ -71,7 +71,7 @@ class RegisterView extends GetView<RegisterController> {
                 ),
                 SizedBox(height: 40.h),
                 BottomButtonAuthen(
-                  titleForm: 'Register',
+                  titleForm: LocaleKeys.registerTitle.tr,
                   onPressed: controller.submitForm,
                   onPressedWithGoogle: () {},
                   onPressedWithApple: () {},
@@ -82,8 +82,8 @@ class RegisterView extends GetView<RegisterController> {
         ),
       ),
       bottomNavigationBar: BottomNavigatorForm(
-        content: "Already have an account?",
-        textButton: ' Login',
+        content: LocaleKeys.bottomRegister.tr,
+        textButton: LocaleKeys.loginTitle.tr,
         onTap: () => Get.toNamed(Routes.login),
       ),
     );

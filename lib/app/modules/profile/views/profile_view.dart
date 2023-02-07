@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 
 import 'package:get/get.dart';
 import 'package:todo_app/app/core/styles/style.dart';
+import 'package:todo_app/app/modules/profile/widgets/main_drawer.dart';
 import 'package:todo_app/app/widget/common/app_button.dart';
 
 import '../controllers/profile_controller.dart';
@@ -11,10 +12,13 @@ class ProfileView extends GetView<ProfileController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: controller.scaffoldKey,
       appBar: AppBar(
-        title: const Text('Profile'),
+        automaticallyImplyLeading: false,
+        title: Text(LocaleKeys.profile.tr),
         centerTitle: true,
       ),
+      drawer: const MainDrawer(),
       body: SafeArea(
         child: SingleChildScrollView(
           padding: EdgeInsets.symmetric(horizontal: 24.w),
@@ -24,7 +28,7 @@ class ProfileView extends GetView<ProfileController> {
               profileHeader(),
               SizedBox(height: 30.h),
               Text(
-                'Setitngs',
+                LocaleKeys.setting.tr,
                 style: context.bodyText1.copyWith(
                   color: AppTheme.subtitleColor,
                 ),
@@ -35,7 +39,7 @@ class ProfileView extends GetView<ProfileController> {
                   size: 30,
                 ),
                 title: Text(
-                  'App Settings',
+                  LocaleKeys.appSetting.tr,
                   style: context.subtitle1,
                 ),
                 trailing: const Icon(
@@ -43,10 +47,11 @@ class ProfileView extends GetView<ProfileController> {
                 ),
                 horizontalTitleGap: 0,
                 contentPadding: EdgeInsets.zero,
+                onTap: controller.openDrawer,
               ),
               SizedBox(height: 16.h),
               Text(
-                'Accounts',
+                LocaleKeys.account.tr,
                 style: context.bodyText1.copyWith(
                   color: AppTheme.subtitleColor,
                 ),
@@ -57,7 +62,7 @@ class ProfileView extends GetView<ProfileController> {
                   size: 30,
                 ),
                 title: Text(
-                  'Change username',
+                  LocaleKeys.changeName.tr,
                   style: context.subtitle1,
                 ),
                 trailing: const Icon(
@@ -72,7 +77,7 @@ class ProfileView extends GetView<ProfileController> {
                   size: 30,
                 ),
                 title: Text(
-                  'Change password',
+                  LocaleKeys.pass.tr,
                   style: context.subtitle1,
                 ),
                 trailing: const Icon(
@@ -87,7 +92,7 @@ class ProfileView extends GetView<ProfileController> {
                   size: 30,
                 ),
                 title: Text(
-                  'Change Image',
+                  LocaleKeys.changeImage.tr,
                   style: context.subtitle1,
                 ),
                 trailing: const Icon(
@@ -103,13 +108,14 @@ class ProfileView extends GetView<ProfileController> {
                   color: context.error,
                 ),
                 title: Text(
-                  'Log out',
+                  LocaleKeys.logout.tr,
                   style: context.subtitle1.copyWith(
                     color: context.error,
                   ),
                 ),
                 horizontalTitleGap: 0,
                 contentPadding: EdgeInsets.zero,
+                onTap: controller.onLogout,
               ),
             ],
           ),
@@ -134,12 +140,12 @@ class ProfileView extends GetView<ProfileController> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             AppButton(
-              '10 Task left',
+              '10 ${LocaleKeys.taskLeft.tr}',
               onPressed: () {},
             ),
             SizedBox(width: 20.w),
             AppButton(
-              '10 Task left',
+              '10 ${LocaleKeys.taskDone.tr}',
               onPressed: () {},
             ),
           ],

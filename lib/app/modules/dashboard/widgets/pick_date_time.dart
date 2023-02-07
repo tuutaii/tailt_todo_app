@@ -26,7 +26,7 @@ class PickDateTime extends GetView<DashboardController> {
             children: [
               Expanded(
                 child: AppButton(
-                  'Cancel',
+                  LocaleKeys.cancel.tr,
                   onPressed: Get.back,
                   type: ButtonType.text,
                   axisSize: MainAxisSize.max,
@@ -36,7 +36,9 @@ class PickDateTime extends GetView<DashboardController> {
               Expanded(
                 child: Obx(
                   () => AppButton(
-                    controller.isChoseTime.value ? 'Save' : 'Chose Time',
+                    controller.isChoseTime.value
+                        ? LocaleKeys.save.tr
+                        : LocaleKeys.choseTime.tr,
                     axisSize: MainAxisSize.max,
                     onPressed: controller.isChoseTime.value
                         ? () => Get.back()
@@ -63,10 +65,10 @@ class PickDateTime extends GetView<DashboardController> {
             isActiveSelected: true,
             onDaySelected: controller.onDaySelected,
             toDateBuilder: (context, date, _) {
-              return DayBuilder(date: date.day.toString());
+              return DateBuilder(date: date.day.toString());
             },
             selectedBuilder: (context, date, _) {
-              return DayBuilder(
+              return DateBuilder(
                 date: date.day.toString(),
                 selected: true,
               );
@@ -82,7 +84,7 @@ class PickDateTime extends GetView<DashboardController> {
       children: [
         SizedBox(height: 10.h),
         Text(
-          'Chose Time',
+          LocaleKeys.choseTime.tr,
           style: context.subtitle1,
         ),
         const Divider(),

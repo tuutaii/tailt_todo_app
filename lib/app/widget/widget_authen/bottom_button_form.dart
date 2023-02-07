@@ -1,5 +1,6 @@
 import '../../core/styles/style.dart';
 import '../../core/utilities/image.dart';
+import '../../core/utilities/string.dart';
 import '../common/app_button.dart';
 
 class BottomButtonAuthen extends StatelessWidget {
@@ -9,10 +10,12 @@ class BottomButtonAuthen extends StatelessWidget {
     this.onPressedWithGoogle,
     this.onPressedWithApple,
     required this.titleForm,
+    this.isLoading = false,
   }) : super(key: key);
 
   final VoidCallback? onPressed, onPressedWithGoogle, onPressedWithApple;
   final String titleForm;
+  final bool isLoading;
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +25,7 @@ class BottomButtonAuthen extends StatelessWidget {
           titleForm,
           axisSize: MainAxisSize.max,
           onPressed: onPressed,
+          loading: isLoading,
         ),
         Padding(
           padding: EdgeInsets.symmetric(vertical: 31.h),
@@ -31,7 +35,7 @@ class BottomButtonAuthen extends StatelessWidget {
                 child: Divider(),
               ),
               Text(
-                'or',
+                StringUtils.or,
                 style:
                     context.subtitle1.copyWith(color: AppTheme.subtitleColor),
               ),
@@ -42,7 +46,8 @@ class BottomButtonAuthen extends StatelessWidget {
           ),
         ),
         AppButton(
-          '$titleForm with Google',
+          '$titleForm Google',
+          textColor: context.surface,
           onPressed: onPressedWithGoogle,
           icon: Image.asset(AppImage.google),
           axisSize: MainAxisSize.max,
@@ -50,7 +55,8 @@ class BottomButtonAuthen extends StatelessWidget {
         ),
         SizedBox(height: 20.h),
         AppButton(
-          '$titleForm with Apple',
+          '$titleForm Apple',
+          textColor: context.surface,
           onPressed: onPressedWithApple,
           icon: Image.asset(AppImage.apple),
           axisSize: MainAxisSize.max,

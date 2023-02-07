@@ -1,7 +1,7 @@
 import '../../../core/styles/style.dart';
 
-class DayBuilder extends StatelessWidget {
-  const DayBuilder({
+class DateBuilder extends StatelessWidget {
+  const DateBuilder({
     Key? key,
     required this.date,
     this.selected = false,

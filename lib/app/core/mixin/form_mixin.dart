@@ -6,7 +6,6 @@ import 'package:get/get.dart';
 import '../../data/services/setting_service.dart';
 import '../styles/style.dart';
 import '../utilities/app_utils.dart';
-import '../utilities/string.dart';
 
 mixin FormMixin on GetxController {
   final List<StreamSubscription> _subscription = [];
@@ -69,7 +68,7 @@ mixin FormMixin on GetxController {
     }
     if (!isConnect) {
       validate = false;
-      return AppUtils.toast(StringUtils.pleaseCheckYourNetwork);
+      return AppUtils.toast('StringUtils.pleaseCheckYourNetwor');
     }
     loading = true;
     validate = true;
@@ -92,7 +91,7 @@ mixin FormMixin on GetxController {
     if (loading) {
       loading = false;
       cancelToken?.cancel();
-      AppUtils.toast(StringUtils.pleaseCheckYourNetwork);
+      AppUtils.toast('StringUtils.pleaseCheckYourNetwork');
     }
   }
 
